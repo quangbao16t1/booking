@@ -62,4 +62,13 @@ UserModel.deleteUser = (id, result) => {
     })
 }
 
+UserModel.searchUser = (result) => {
+    const sql = `SELECT * FROM users WHERE name LIKE '%Bao%'`;
+    db.query(sql, (err, data) => {
+        if(err) throw err;
+         console.log(sql);
+        result(data);
+    });
+}
+
 export default UserModel;

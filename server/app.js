@@ -18,8 +18,11 @@ const port = process.env.PORT || 3333;
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
-
-app.use("/", userRouter);
+app.use(bodyParser.urlencoded({   
+       extended: true
+     }));
+     
+app.use('/users', userRouter);
 
 app.get("/", (req, res) => {
        res.json({

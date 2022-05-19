@@ -89,4 +89,20 @@ UserController.deleteUser = async (req, res) => {
     }
 }
 
+UserController.searchUser = async (req, res) => {
+    try {
+        const key = "thuong";
+        console.log(key)
+        await UserModel.searchUser(data => {
+            res.status(200).json({
+                result: data,
+            })
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: error.message,
+        })
+    }
+}
+
 export default UserController;
