@@ -91,9 +91,9 @@ UserController.deleteUser = async (req, res) => {
 
 UserController.searchUser = async (req, res) => {
     try {
-        const key = "thuong";
+        const key = req.query.name;
         console.log(key)
-        await UserModel.searchUser(data => {
+        await UserModel.searchUser(key, (data) => {
             res.status(200).json({
                 result: data,
             })

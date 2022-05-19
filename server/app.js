@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({   
        extended: true
      }));
-     
+
 app.use('/users', userRouter);
 
 app.get("/", (req, res) => {
@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/", (req, res) => {
-       console.log("dsadasdas");
+       console.log("dsadsasdas");
        res.json({
               message: "Xin chao"
        });
