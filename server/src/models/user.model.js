@@ -6,6 +6,7 @@ const UserModel = (user) => {
     this.email = user.email;
     this.phoneNumber = user.phoneNumber;
     this.address = user.address;
+    this.job =  user.job;
     this.roleId = user.roleId;
 }
 
@@ -15,6 +16,7 @@ UserModel.createUser = (user, result) => {
         email = '${user.email}' ,
         phoneNumber = '${user.phoneNumber}',
         address = '${user.address}',
+        job = '${user.job}',
         roleId = '${user.roleId}'`;
     db.query(sql, (err, data) => {
         if(err) throw err;
@@ -45,6 +47,7 @@ UserModel.updateUser = (id, user, result) => {
         email = '${user.email}' ,
         phoneNumber = '${user.phoneNumber}',
         address = '${user.address}',
+        job = '${user.job}',
         roleId = '${user.roleId}'
         WHERE id = ${id}`,
         (err, data) => {

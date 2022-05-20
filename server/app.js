@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import connectDb  from "./src/configs/db.config.js";
 import userRouter from "./src/routes/user.routes.js";
+import tableRouter from "./src/routes/table.routes.js";
+import bookingRouter from "./src/routes/booking.routes.js";
 
 dotenv.config();
 
@@ -23,6 +25,8 @@ app.use(bodyParser.urlencoded({
      }));
 
 app.use('/users', userRouter);
+app.use('/tables', tableRouter);
+app.use('/bookings', bookingRouter);
 
 app.get("/", (req, res) => {
        res.json({
